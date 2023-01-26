@@ -1,6 +1,6 @@
 input.onButtonPressed(Button.A, function () {
-    int1 = randint(0, 10)
-    int2 = randint(0, 10)
+    int1 = randint(0, 100)
+    int2 = randint(0, 100)
     basic.showNumber(int1)
     basic.pause(1000)
     if (operator == 0) {
