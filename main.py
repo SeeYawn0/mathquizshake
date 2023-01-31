@@ -1,7 +1,11 @@
 def on_button_pressed_a():
     global int1, int2
-    int1 = randint(0, 10)
-    int2 = randint(0, 10)
+    if hard == 0:
+        int1 = randint(0, 10)
+        int2 = randint(0, 10)
+    else:
+        int1 = randint(0, 100)
+        int2 = randint(0, 100)
     basic.show_number(int1)
     basic.pause(1000)
     if operator == 0:
@@ -17,6 +21,14 @@ def on_button_pressed_a():
     basic.pause(1000)
     basic.show_string("=?")
 input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_button_pressed_ab():
+    global hard
+    if hard == 0:
+        hard += 1
+    else:
+        hard = 0
+input.on_button_pressed(Button.AB, on_button_pressed_ab)
 
 def on_button_pressed_b():
     if operator == 0:
@@ -39,5 +51,7 @@ input.on_gesture(Gesture.SHAKE, on_gesture_shake)
 
 int2 = 0
 int1 = 0
+hard = 0
 operator = 0
 operator = 0
+hard = 0

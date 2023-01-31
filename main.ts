@@ -40,7 +40,7 @@ input.onButtonPressed(Button.B, function () {
         basic.showNumber(int1 / int2)
     }
 })
-input.onGesture(Gesture.Shake, function () {
+input.onGesture(Gesture.TiltRight, function () {
     if (operator > 3) {
         operator = 0
     } else {
