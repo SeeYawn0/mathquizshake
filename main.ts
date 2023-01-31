@@ -1,6 +1,11 @@
 input.onButtonPressed(Button.A, function () {
-    int1 = randint(0, 10)
-    int2 = randint(0, 10)
+    if (hard == 0) {
+        int1 = randint(0, 10)
+        int2 = randint(0, 10)
+    } else {
+        int1 = randint(0, 100)
+        int2 = randint(0, 100)
+    }
     basic.showNumber(int1)
     basic.pause(1000)
     if (operator == 0) {
@@ -16,6 +21,13 @@ input.onButtonPressed(Button.A, function () {
     basic.showNumber(int2)
     basic.pause(1000)
     basic.showString("=?")
+})
+input.onButtonPressed(Button.AB, function () {
+    if (hard == 0) {
+        hard += 1
+    } else {
+        hard = 0
+    }
 })
 input.onButtonPressed(Button.B, function () {
     if (operator == 0) {
@@ -37,5 +49,7 @@ input.onGesture(Gesture.Shake, function () {
 })
 let int2 = 0
 let int1 = 0
+let hard = 0
 let operator = 0
 operator = 0
+hard = 0
